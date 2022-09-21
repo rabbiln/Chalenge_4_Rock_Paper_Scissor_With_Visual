@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_paper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/action_man"
+        android:paddingHorizontal="16dp"
+        android:rotation="-15"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        android:textSize="50sp
+"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:text="Kertas" />
+
+    <TextView
+        android:id="@+id/tv_Scissor"
+        android:fontFamily="@font/action_man"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:rotation="-15"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="50sp
+"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tv_paper"
+        tools:layout_editor_absoluteX="16dp"
+        tools:text="Gunting" />
+
+    <TextView
+        android:id="@+id/tv_stone"
+        android:fontFamily="@font/action_man"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:rotation="-15"
+        android:textAlignment="center"
+        android:textColor="@color/purple"
+        android:textSize="50sp
+"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Scissor"
+        tools:layout_editor_absoluteX="16dp"
+        tools:text="Batu" />
+
+    <TextView
+        android:id="@+id/tv_Player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="116dp"
+        android:fontFamily="@font/action_man"
+        android:paddingHorizontal="16dp"
+        android:rotation="0"
+        android:textAlignment=""
+        android:textColor="@color/light_Blue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_stone"
+        tools:text="Pemain" />
+
+    <TextView
+        android:id="@+id/tv_Com"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/action_man"
+        android:paddingHorizontal="16dp"
+        android:rotation="0"
+        android:textAlignment=""
+        android:textColor="@color/light_Blue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_stone"
+        tools:text="Com" />
+
+    <FrameLayout
+        android:id="@+id/fl_paper"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:padding="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_Player">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_paper" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_scissor"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:padding="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_paper">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_scissor" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fl_rock"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:padding="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_scissor">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_rock"
+            app:layout_constraintTop_toBottomOf="@+id/fl_scissor" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_paper_right"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:padding="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_Com">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_paper" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_scissor_right"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:padding="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_paper_right">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_scissor" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fl_rock_right"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:padding="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_scissor">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_rock"
+            app:layout_constraintTop_toBottomOf="@+id/fl_scissor" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fl_paper_right"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fl_paper"
+        app:layout_constraintTop_toBottomOf="@+id/tv_stone">
+
+        <TextView
+            android:id="@+id/tv_VS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/action_man"
+            android:rotation="-15"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="80sp"
+            tools:text="VS" />
+
+        <TextView
+            android:id="@+id/tv_player_win"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/green"
+            android:fontFamily="@font/action_man"
+            android:rotation="-15"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            tools:text="Pemain \n MENANG!" />
+
+        <TextView
+            android:id="@+id/tv_com_win"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/green"
+            android:fontFamily="@font/action_man"
+            android:rotation="-15"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            tools:text="Computer \n MENANG!" />
+
+        <TextView
+            android:id="@+id/tv_draw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:fontFamily="@font/action_man"
+            android:rotation="-15"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            tools:text="DRAW" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
