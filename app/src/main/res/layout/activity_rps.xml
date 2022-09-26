@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.game.RpsActivity">
 
 
     <TextView
@@ -95,6 +95,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_Player">
 
         <ImageView
+            android:id="@+id/iv_paper"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_paper" />
@@ -113,6 +114,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fl_paper">
 
         <ImageView
+            android:id="@+id/iv_scissor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_scissor" />
@@ -131,6 +133,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fl_scissor">
 
         <ImageView
+            android:id="@+id/iv_rock"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_rock"
@@ -149,6 +152,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_Com">
 
         <ImageView
+            android:id="@+id/iv_paper_right"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_paper" />
@@ -167,7 +171,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fl_paper_right">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_scissor_right"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_scissor" />
@@ -186,6 +190,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fl_scissor">
 
         <ImageView
+            android:id="@+id/iv_rock_rigt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_rock"
@@ -228,18 +233,6 @@
             tools:text="Pemain \n MENANG!" />
 
         <TextView
-            android:id="@+id/tv_com_win"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/green"
-            android:fontFamily="@font/action_man"
-            android:rotation="-15"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_20ssp"
-            tools:text="Computer \n MENANG!" />
-
-        <TextView
             android:id="@+id/tv_draw"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -265,7 +258,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fl_rock_right">
 
         <ImageView
-            android:id="@+id/ib_refresh"
+            android:id="@+id/iv_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_refresh" />
