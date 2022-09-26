@@ -1,13 +1,18 @@
 package com.guling.chalenge4rock_paper_scissor_withvisual.ui.game
 
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.guling.chalenge4rock_paper_scissor_withvisual.ComputerRpsManager
 import com.guling.chalenge4rock_paper_scissor_withvisual.IOUtils
 import com.guling.chalenge4rock_paper_scissor_withvisual.R
 import com.guling.chalenge4rock_paper_scissor_withvisual.RpsManager
 import com.guling.chalenge4rock_paper_scissor_withvisual.databinding.ActivityRpsBinding
 import com.guling.chalenge4rock_paper_scissor_withvisual.enum.GameState
+import com.guling.chalenge4rock_paper_scissor_withvisual.enum.PlayerSide
+import com.guling.chalenge4rock_paper_scissor_withvisual.enum.PlayerState
 import com.guling.chalenge4rock_paper_scissor_withvisual.model.Player
 
 class RpsActivity : AppCompatActivity() {
@@ -23,19 +28,19 @@ class RpsActivity : AppCompatActivity() {
         super.onCreate(savedInstancesState)
         setContentView(binding.root)
         rpsManager.initGame()
-        setOnClickListener()
+        setOnClickListeners()
         supportActionBar?.hide()
     }
 
     private fun setOnClickListeners() {
         binding.ivRock.setOnClickListener {
-            rpsManager.movePlayerToTop()
+            rpsManager.movePlayerRock()
         }
         binding.ivPaper.setOnClickListener {
-            rpsManager.movePlayerToBottom()
+            rpsManager.movePlayerPaper()
         }
         binding.ivScissor.setOnClickListener {
-            rpsManager.movePlayerToBottom()
+            rpsManager.movePlayerScissor()
         }
         binding.ivRefresh.setOnClickListener {
             rpsManager.startOrRestartGame()
@@ -48,18 +53,62 @@ class RpsActivity : AppCompatActivity() {
 
     override fun onGameStateChanged(gameState: GameState) {
         binding.tvStatusGame.text = ""
-        binding.tvActionGame.text = when (gameState) {
-            GameState.IDLE -> getString(R.string.)
-            GameState.STARTED -> getString(R.string.text_fire)
-            GameState.FINISHED -> getString(R.string.text_restart)
+        binding.tvStatusGame.text = when (gameState) {
+            GameState.IDLE -> getString(R.string.VS)
+            GameState.PLAYERWIN -> getString(R.string.text_win)
+            GameState.PLAYERLOSE -> getString(R.string.text_lose)
+            GameState.DRAW -> getString(R.string.text_draw)
         }
     }
 
     override fun onGameFinished(gameState: GameState, winner: Player) {
-        if (winner.playerSide == PlayerSide.PLAYER_ONE) {
-            binding.tvStatusGame.text = getString(R.string.text_you_win)
+        if (winner.playerSide == PlayerSide.PLAYER) {
+            binding.tvStatusGame.text = getString(R.string.text_win)
+        }
+        else if (winner.playerSide == PlayerSide.COMPUTER) {
+            binding.tvStatusGame.text = getString(R.string.text_lose)
+        }
+        else {
+            binding.tvStatusGame.text = getString(R.string.text_draw)
+        }
+    }
+
+    private fun setCharacterState(player: Player, iconDrawableRes: Int) {
+        val ivCharRock: ImageView?
+        val ivCharPaper: ImageView?
+        val ivCharScissor: ImageView?
+        val drawable = ContextCompat.getDrawable(this, iconDrawableRes)
+
+        if (player.playerSide == PlayerSide.PLAYER) {
+            ivCharRock = binding.ivRock
+            ivCharPaper = binding.ivPaper
+            ivCharScissor = binding.ivScissor
         } else {
-            binding.tvStatusGame.text = getString(R.string.text_you_lose)
+            ivCharRock = binding.ivRockRigt
+            ivCharPaper = binding.ivPaperRight
+            ivCharScissor = binding.ivScissorRight
+        }
+
+        when (player.playerState) {
+            PlayerState.ROCK -> {
+                ivCharRock.visibility = View.VISIBLE
+                ivCharPaper.visibility = View.VISIBLE
+                ivCharScissor.visibility = View.VISIBLE
+                ivCharRock.setImageDrawable(drawable)
+            }
+            PlayerState.PAPER -> {
+                ivCharRock.visibility = View.VISIBLE
+                ivCharPaper.visibility = View.VISIBLE
+                ivCharScissor.visibility = View.VISIBLE
+                ivCharPaper.setImageDrawable(drawable)
+
+            }
+            PlayerState.SCISSOR -> {
+                ivCharRock.visibility = View.VISIBLE
+                ivCharPaper.visibility = View.VISIBLE
+                ivCharScissor.visibility = View.VISIBLE
+                ivCharScissor.setImageDrawable(drawable)
+            }
         }
     }
 

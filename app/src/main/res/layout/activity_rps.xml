@@ -210,7 +210,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_stone">
 
         <TextView
-            android:id="@+id/tv_VS"
+            android:id="@+id/tv_status_game"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/action_man"
@@ -218,7 +218,7 @@
             android:textAlignment="center"
             android:textColor="@color/red"
             android:textSize="@dimen/_60ssp"
-            android:text="VS" />
+            tools:text="VS" />
 
         <TextView
             android:id="@+id/tv_player_win"

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Chalenge 4 Rock_Paper_Scissor_With Visual</string>
+    <string name="VS"><b><font fgcolor='#FF0000'>VS</font></b></string>
+    <string name="text_win"><b><font bgcolor='#FF4CD964' color = '#D4F1F4'>Player \n Win</font></b></string>
+    <string name="text_lose"><b><font bgcolor='#FF4CD964' color = '#D4F1F4'>Computer \n Win</font></b></string>
+    <string name="text_draw"><b><font bgcolor='#0000FF' color='#D4F1F4'>DRAW</font></b></string>
 </resources>
