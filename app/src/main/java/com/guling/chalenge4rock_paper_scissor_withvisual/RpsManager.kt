@@ -9,10 +9,10 @@ import kotlin.random.Random
 
 interface RpsManager {
     fun initGame()
-    fun startOrRestartGame()
     fun movePlayerRock()
     fun movePlayerPaper()
     fun movePlayerScissor()
+    fun startOrRestartGame()
 }
 
 interface RpsListener {

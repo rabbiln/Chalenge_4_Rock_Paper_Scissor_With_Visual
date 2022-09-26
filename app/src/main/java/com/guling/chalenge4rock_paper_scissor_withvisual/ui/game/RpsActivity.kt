@@ -55,9 +55,11 @@ class RpsActivity : AppCompatActivity() {
         binding.tvStatusGame.text = ""
         binding.tvStatusGame.text = when (gameState) {
             GameState.IDLE -> getString(R.string.VS)
+            GameState.STARTED -> getString(R.string.VS)
             GameState.PLAYERWIN -> getString(R.string.text_win)
             GameState.PLAYERLOSE -> getString(R.string.text_lose)
             GameState.DRAW -> getString(R.string.text_draw)
+            GameState.FINISHED -> getString(R.string.VS)
         }
     }
 
@@ -90,6 +92,11 @@ class RpsActivity : AppCompatActivity() {
         }
 
         when (player.playerState) {
+            PlayerState.IDLE -> {
+                ivCharRock.visibility = View.VISIBLE
+                ivCharPaper.visibility = View.VISIBLE
+                ivCharScissor.visibility = View.VISIBLE
+            }
             PlayerState.ROCK -> {
                 ivCharRock.visibility = View.VISIBLE
                 ivCharPaper.visibility = View.VISIBLE
